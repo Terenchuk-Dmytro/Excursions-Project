@@ -3,16 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <title>Екскурсії Україною</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        a:link { color: #0066cc; }
+        a:visited { color: #6600cc; }
+        a:hover { color: #ff6600; }
+        table { border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #333; padding: 10px; }
+        th { background-color: #4CAF50; color: white; }
+        .small-img { width: 100px; height: 100px; cursor: pointer; }
+    </style>
 </head>
 <body>
-
     <h1>Екскурсії Україною</h1>
 
+    <p>Вітаємо на нашому сайті екскурсій!</p>
+
+    <p>На цьому сайті ви знайдете детальну інформацію про екскурсії, які проводяться в <strong>Києві</strong>, 
+    <strong>Львові</strong> та <strong>Одесі</strong>.</p>
+
+    <h2>Переходи на сторінки екскурсій:</h2>
     <ul>
         <li><a href="kyiv.html">Екскурсія Києвом</a></li>
         <li><a href="lviv.html">Екскурсія Львовом</a></li>
         <li><a href="odesa.html">Екскурсія Одесою</a></li>
     </ul>
+
+    <h2 id="info-section">Дообавлена інформація</h2>
+    
+    <h3>Типи екскурсій:</h3>
+    <ol>
+        <li>Історичні екскурсії</li>
+        <li>Природні тури</li>
+        <li>Культурні мандри</li>
+        <li>Архітектурні огляди</li>
+    </ol>
+
+    <h3>Визначення ключових термінів:</h3>
+    <dl>
+        <dt><strong>Екскурсія</strong></dt>
+        <dd>Організована мандра з гідом до історичних або туристичних місць</dd>
+        <dt><strong>Туристичний маршрут</strong></dt>
+        <dd>Заздалегідь спланований шлях для огляду основних пам'яток міста</dd>
+        <dt><strong>Гід</strong></dt>
+        <dd>Спеціаліст, який розповідає про історичні та культурні особливості місць</dd>
+    </dl>
+
+    <h2>Таблиця розкладу екскурсій:</h2>
+    <table>
+        <thead>
+            <tr style="background-color: #4CAF50; color: white;">
+                <th>Місто</th>
+                <th>Час</th>
+                <th>Ціна</th>
+                <th>Контакт</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="images/kyiv.jpg" alt="Київ" style="width: 60px; height: 60px;"></td>
+                <td><a href="kyiv.html">09:00 - 17:00</a></td>
+                <td>500 грн</td>
+                <td>+38 (555) 693 41 64</td>
+            </tr>
+            <tr>
+                <td><img src="images/lviv.jpg" alt="Львів" style="width: 60px; height: 60px;"></td>
+                <td><a href="lviv.html">10:00 - 18:00</a></td>
+                <td>600 грн</td>
+                <td>+38 (555) 943 57 28</td>
+            </tr>
+            <tr>
+                <td><img src="images/odesa.jpg" alt="Одеса" style="width: 60px; height: 60px;"></td>
+                <td><a href="odesa.html">11:00 - 19:00</a></td>
+                <td>550 грн</td>
+                <td>+38 (555) 583 67 54</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Галерея міст:</h2>
+    
+    <img src="images/kyiv.jpg" alt="Київ" class="small-img img-link" onclick="window.open(this.src, '_blank')" title="Клік для повного розміру">
+    <img src="images/lviv.jpg" alt="Львів" class="small-img img-link" onclick="window.open(this.src, '_blank')" title="Клік для повного розміру">
+    <img src="images/odesa.jpg" alt="Одеса" class="small-img img-link" onclick="window.open(this.src, '_blank')" title="Клік для повного розміру">
 
 </body>
 </html>

@@ -3,25 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <title>Екскурсія Львовом</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        a:link { color: #0066cc; }
+        a:visited { color: #6600cc; }
+        a:hover { color: #ff6600; }
+        table { border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #333; padding: 10px; }
+        th { background-color: #2c5aa0; color: white; }
+        .small-img { width: 100px; height: 100px; cursor: pointer; margin: 5px; }
+    </style>
 </head>
 <body>
-
     <h1>Екскурсія Львовом</h1>
 
-    <p>
-        Львів - одне з найкрасивіших міст України з унікальною архітектурою,
-        вузькими вуличками та атмосферою старого європейського міста.
-    </p>
+    <p>Львів - одне з найкрасивіших міст України. Це місто вражає своєю архітектурою, культурою та історією.</p>
 
-    <h2>Що відвідати:</h2>
-    <ul>
-        <li>Площа Ринок</li>
-        <li>Львівська опера</li>
-        <li>Високий Замок</li>
-        <li>Кав’ярні старого міста</li>
+    <p>Посилання для навігації: <a href="index.html">На головну</a> | <a href="#cultural-heritage">Культурна спадщина</a> | 
+    <a href="odesa.html">Екскурсія Одесою →</a> | <a href="https://www.lvivcity.com/" target="_blank">Офіційний сайт Львова</a></p>
+
+    <h2 id="cultural-heritage">Культурна спадщина Львова:</h2>
+    
+    <h3>Найвизначніші об'єкти:</h3>
+    <ol type="a">
+        <li>Кафедральний собор</li>
+        <li>Ратуша на Ринку</li>
+        <li>Церква святого Николая</li>
+        <li>Палац Потоцьких</li>
+        <li>Музей історії релігії</li>
+    </ol>
+
+    <h3>Матеріали для дослідження:</h3>
+    <ul type="circle">
+        <li>Архітектурні гіди</li>
+        <li>Художні музеї</li>
+        <li>Літературні центри</li>
+        <li>Органні концерти</li>
+        <li>Кав'ярні та ресторани</li>
     </ul>
 
-    <a href="index.html">На головну</a>
+    <h2>Галерея Львова:</h2>
+    <img src="images/lviv.jpg" alt="Львів - Ринок" class="small-img img-link" onclick="window.open(this.src, '_blank')" title="Клік для большого розміру">
+    <img src="images/lviv.jpg" alt="Львів - половина розміру" class="small-img img-link" onclick="window.open(this.src, '_blank')" style="width: 45px; height: 45px;" title="Половина розміру">
+    <img src="images/lviv.jpg" alt="Львів - двійний розмір" class="large-img img-link" onclick="window.open(this.src, '_blank')" style="width: 180px; height: 180px;" title="Двійний розмір">
+
+    <h2>Комплексна таблиця з різними характеристиками</h2>
+    <table cellspacing="8" cellpadding="8" border="2">
+        <colgroup>
+            <col span="1" style="background-color: #fff59d; width: 120px;">
+            <col span="2" style="background-color: #ffccbc;">
+        </colgroup>
+        <thead>
+            <tr style="background-color: #ff6f00; color: white; text-align: center;">
+                <th>Дата</th>
+                <th>Тип екскурсії</th>
+                <th>Місця для відвідування</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr align="center">
+                <td rowspan="2"><strong>Понеділок</strong></td>
+                <td align="left">Архітектурна</td>
+                <td align="right">Ринок, Собор</td>
+            </tr>
+            <tr align="center">
+                <td align="left">Мистецька</td>
+                <td align="right">Музеї, Галереї</td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><strong>Вівторок - Культурна програма</strong></td>
+                <td align="center">800 грн</td>
+            </tr>
+            <tr valign="top" align="center">
+                <td><em>Середа</em></td>
+                <td colspan="2" align="left">Органні концерти та екскурсії по храмам</td>
+            </tr>
+            <tr align="right">
+                <td>Четвер</td>
+                <td>Гастрономічна</td>
+                <td>450 грн</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Карта Львова:</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2572.5873!2d24.0088!3d49.8395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add7c09baf3fb%3A0x7c6e09ce58010!2z0JvRjdGP0LI!5e0!3m2!1suk!2sua!4v1234567890" 
+        width="350" height="280" style="border: 4px solid #ff6f00;" allowfullscreen="" loading="lazy"></iframe>
+
+    <hr>
 
 </body>
 </html>

@@ -3,25 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <title>Екскурсія Одесою</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        a:link { color: #0066cc; }
+        a:visited { color: #6600cc; }
+        a:hover { color: #ff6600; }
+        table { border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #333; padding: 10px; }
+        th { background-color: #2c5aa0; color: white; }
+        .small-img { width: 100px; height: 100px; cursor: pointer; margin: 5px; }
+    </style>
 </head>
 <body>
-
     <h1>Екскурсія Одесою</h1>
 
-    <p>
-        Одеса - це портове місто на узбережжі Чорного моря,
-        відоме своїм гумором, морською атмосферою та історичними пам’ятками.
-    </p>
+    <p class="note">Одеса - <strong>перлина Чорного моря</strong>. Головний пляж - улюблене місце <em>туристів та мешканців</em>.</p>
 
-    <h2>Що відвідати:</h2>
-    <ul>
-        <li>Дерибасівська вулиця</li>
-        <li>Потьомкінські сходи</li>
-        <li>Оперний театр</li>
+    <p>Навігація: <a href="index.html">На головну</a> | <a href="#beaches-section">Пляжі та узбережжя</a> | 
+    <a href="kyiv.html">Екскурсія Києвом ↻</a></p>
+
+    <h2 id="beaches-section">Пляжі та узбережжя:</h2>
+    
+    <h3>Популярні пляжі:</h3>
+    <ol type="1">
+        <li> 10-та станція</li>
+        <li>Ланжерон</li>
         <li>Аркадія</li>
+        <li>Середземна</li>
+        <li>Дельфінарій та парк розваг</li>
+    </ol>
+
+    <h3>Види розваг:</h3>
+    <ul type="disc">
+        <li>Водні види спорту</li>
+        <li>Рибалка на березі</li>
+        <li>Вечірні прогулянки морем</li>
+        <li>Пляжні дискотеки</li>
+        <li>Кулінарні тури</li>
     </ul>
 
-    <a href="index.html">На головну</a>
+    <h2>Фотографії берегу моря:</h2>
+    <img src="images/odesa.jpg" alt="Одеса - пляж" class="small-img img-link" onclick="window.open(this.src, '_blank')">
+    <img src="images/odesa.jpg" alt="Одеса - половина" style="width: 40px; height: 40px;" class="img-link" onclick="window.open(this.src, '_blank')">
+    <img src="images/odesa.jpg" alt="Одеса - збільшено" class="large-img img-link" onclick="window.open(this.src, '_blank')" style="width: 160px; height: 160px;">
+
+    <h2>Таблиця туристичних послуг</h2>
+    <table cellspacing="10" cellpadding="10">
+        <colgroup>
+            <col style="background-color: #e1f5fe; width: 130px;">
+            <col style="background-color: #f0f4c3; width: 150px;">
+            <col style="background-color: #ffe0b2; width: 120px;">
+        </colgroup>
+        <thead>
+            <tr style="background-color: #0097a7; color: white; font-weight: bold;">
+                <th>Екскурсія</th>
+                <th>Розклад</th>
+                <th>Ціна (грн)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr align="center" valign="middle">
+                <td rowspan="2"><img src="images/odesa.jpg" alt="Одеса" style="width: 50px; height: 50px; border-radius: 5px;"></td>
+                <td align="left">Морська екскурсія на човні</td>
+                <td align="right">600</td>
+            </tr>
+            <tr>
+                <td align="left">Ночна прогулянка</td>
+                <td align="right">550</td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><strong>Екскурсія Потьомкінськими сходами та театром</strong></td>
+                <td align="center">350</td>
+            </tr>
+            <tr style="background-color: #fff9c4;" valign="bottom">
+                <td><em>Пляжні види спорту</em></td>
+                <td align="left">10:00 - 18:00</td>
+                <td align="center">400</td>
+            </tr>
+            <tr valign="top" align="center">
+                <td><strong>Кав'ярні та ресторани</strong></td>
+                <td colspan="2" align="left"><em>Вільний час для самостійного дослідження</em></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Інтерактивна карта Одеси:</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2733.9876!2d30.7326!3d46.4843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c631f0d2e5f5b7%3A0x6a5d5b5b5b5b5b5b!2z0J7QktGF0LDRj!5e0!3m2!1suk!2sua!4v1234567890" 
+        width="380" height="300" style="border: 5px solid #00838f; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+
+    <hr>
 
 </body>
 </html>
