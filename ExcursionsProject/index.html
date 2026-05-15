@@ -16,6 +16,9 @@
 </head>
 <body id="page-body">
     <h1 id="main-title">Екскурсії Україною</h1>
+    <script>
+        document.write('<p id="load-message">JS модуль підключено. Натисніть кнопки для демонстрації.</p>');
+    </script>
 
     <p id="intro-paragraph" class="text-body">Вітаємо на нашому сайті екскурсій!</p>
 
@@ -94,5 +97,20 @@
         <p class="quote">Це цитата з псевдоелементами</p>
     </div>
 
+    <section id="js-demo">
+        <h2>Script</h2>
+        <div id="js-controls">
+            <button id="btn-dialog">Діалог з користувачем</button>
+            <button id="btn-dev-info">Про розробника</button>
+            <button id="btn-compare">Порівняти рядки</button>
+            <button id="btn-bg">Змінити фон (30 сек)</button>
+            <button id="btn-redirect">Перейти на сторінку</button>
+            <button id="btn-dom-demo">Демонстрація DOM</button>
+        </div>
+        <div id="js-output"></div>
+        <div id="dom-demo-target"></div>
+    </section>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
