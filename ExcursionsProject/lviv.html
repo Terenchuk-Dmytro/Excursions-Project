@@ -3,33 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Екскурсія Львовом</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            background-color: white;
-            font-family: Arial, sans-serif;
-            margin: 20px;
+        #intro-paragraph {
+            font-style: italic !important;
+            color: #555;
         }
-        a:link { color: #0066cc; }
-        a:visited { color: #6600cc; }
-        a:hover { color: #ff6600; }
-        table { border-collapse: collapse; margin: 20px 0; }
-        th, td { border: 1px solid #333; padding: 10px; }
-        th { background-color: #2c5aa0; color: white; }
-        .small-img { width: 100px; height: 100px; cursor: pointer; margin: 5px; }
+        a:link, a:visited {
+            color: #cc0000;
+        }
     </style>
 </head>
-<body>
-    <h1>Екскурсія Львовом</h1>
+<body id="page-body">
+    <h1 id="main-title">Екскурсія Львовом</h1>
 
-    <p>Львів - одне з найкрасивіших міст України. Це місто вражає своєю архітектурою, культурою та історією.</p>
+    <p id="intro-paragraph" class="text-body">Львів - одне з найкрасивіших міст України. Це місто вражає своєю архітектурою, культурою та історією.</p>
 
-    <p>Посилання для навігації: <a href="index.html">На головну</a> | <a href="#cultural-heritage">Культурна спадщина</a> | 
-    <a href="odesa.html">Екскурсія Одесою →</a> | <a href="https://www.lvivcity.com/" target="_blank">Офіційний сайт Львова</a></p>
+    <p class="text-body">Посилання для навігації: <a class="nav-link" id="home-link" href="index.html">На головну</a> | <a class="nav-link" href="#cultural-heritage">Культурна спадщина</a> | 
+    <a class="nav-link" href="odesa.html">Екскурсія Одесою →</a></p>
 
     <h2 id="cultural-heritage">Культурна спадщина Львова:</h2>
     
     <h3>Найвизначніші об'єкти:</h3>
-    <ol type="a">
+    <ol class="list-numbered">
         <li>Кафедральний собор</li>
         <li>Ратуша на Ринку</li>
         <li>Церква святого Николая</li>
@@ -37,8 +33,8 @@
         <li>Музей історії релігії</li>
     </ol>
 
-    <h3>Матеріали для дослідження:</h3>
-    <ul type="circle">
+    <h3 class="section-title">Матеріали для дослідження:</h3>
+    <ul class="list-bulleted">
         <li>Архітектурні гіди</li>
         <li>Художні музеї</li>
         <li>Літературні центри</li>
@@ -51,14 +47,14 @@
     <img src="images/lviv.jpg" alt="Львів - половина розміру" class="small-img img-link" onclick="window.open(this.src, '_blank')" style="width: 45px; height: 45px;" title="Половина розміру">
     <img src="images/lviv.jpg" alt="Львів - двійний розмір" class="large-img img-link" onclick="window.open(this.src, '_blank')" style="width: 180px; height: 180px;" title="Двійний розмір">
 
-    <h2>Комплексна таблиця з різними характеристиками</h2>
-    <table cellspacing="8" cellpadding="8" border="2">
+    <h2 class="section-title">Комплексна таблиця з різними характеристиками</h2>
+    <table class="styled-table" cellspacing="8" cellpadding="8" border="2">
         <colgroup>
             <col span="1" style="background-color: #fff59d; width: 120px;">
             <col span="2" style="background-color: #ffccbc;">
         </colgroup>
         <thead>
-            <tr style="background-color: #ff6f00; color: white; text-align: center;">
+            <tr>
                 <th>Дата</th>
                 <th>Тип екскурсії</th>
                 <th>Місця для відвідування</th>

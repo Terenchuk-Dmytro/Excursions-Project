@@ -3,48 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Екскурсії Україною</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            background-color: white;
-            font-family: Arial, sans-serif;
-            margin: 20px;
+        #intro-paragraph {
+            font-style: italic !important;
+            color: #555;
         }
-        a:link { color: #0066cc; }
-        a:visited { color: #6600cc; }
-        a:hover { color: #ff6600; }
-        table { border-collapse: collapse; margin: 20px 0; }
-        th, td { border: 1px solid #333; padding: 10px; }
-        th { background-color: #4CAF50; color: white; }
-        .small-img { width: 100px; height: 100px; cursor: pointer; }
+        a:link, a:visited {
+            color: #cc0000;
+        }
     </style>
 </head>
-<body>
-    <h1>Екскурсії Україною</h1>
+<body id="page-body">
+    <h1 id="main-title">Екскурсії Україною</h1>
 
-    <p>Вітаємо на нашому сайті екскурсій!</p>
+    <p id="intro-paragraph" class="text-body">Вітаємо на нашому сайті екскурсій!</p>
 
-    <p>На цьому сайті ви знайдете детальну інформацію про екскурсії, які проводяться в <strong>Києві</strong>, 
+    <p class="text-body">На цьому сайті ви знайдете детальну інформацію про екскурсії, які проводяться в <strong>Києві</strong>, 
     <strong>Львові</strong> та <strong>Одесі</strong>.</p>
 
-    <h2>Переходи на сторінки екскурсій:</h2>
-    <ul>
-        <li><a href="kyiv.html">Екскурсія Києвом</a></li>
-        <li><a href="lviv.html">Екскурсія Львовом</a></li>
-        <li><a href="odesa.html">Екскурсія Одесою</a></li>
+    <h2 class="section-title">Переходи на сторінки екскурсій:</h2>
+    <ul class="list-bulleted">
+        <li><a class="nav-link" href="kyiv.html">Екскурсія Києвом</a></li>
+        <li><a class="nav-link" href="lviv.html">Екскурсія Львовом</a></li>
+        <li><a class="nav-link" href="odesa.html">Екскурсія Одесою</a></li>
     </ul>
 
-    <h2 id="info-section">Дообавлена інформація</h2>
+    <h2 id="info-section">Важлива інформація</h2>
     
     <h3>Типи екскурсій:</h3>
-    <ol>
+    <ol class="list-numbered">
         <li>Історичні екскурсії</li>
         <li>Природні тури</li>
         <li>Культурні мандри</li>
         <li>Архітектурні огляди</li>
     </ol>
 
-    <h3>Визначення ключових термінів:</h3>
-    <dl>
+    <h3>Ключові терміни:</h3>
+    <dl class="definition-list">
         <dt><strong>Екскурсія</strong></dt>
         <dd>Організована мандра з гідом до історичних або туристичних місць</dd>
         <dt><strong>Туристичний маршрут</strong></dt>
@@ -53,10 +49,10 @@
         <dd>Спеціаліст, який розповідає про історичні та культурні особливості місць</dd>
     </dl>
 
-    <h2>Таблиця розкладу екскурсій:</h2>
-    <table>
+    <h2 class="section-title">Таблиця розкладу екскурсій:</h2>
+    <table class="styled-table">
         <thead>
-            <tr style="background-color: #4CAF50; color: white;">
+            <tr>
                 <th>Місто</th>
                 <th>Час</th>
                 <th>Ціна</th>
