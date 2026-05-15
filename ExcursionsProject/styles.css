@@ -93,3 +93,72 @@ table.styled-table th {
     width: 200px;
     height: 200px;
 }
+/* Прямі дочірні елементи */
+body#page-body > h1 {
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 15px;
+}
+
+body#page-body > h2 {
+    margin-top: 2em;
+    color: #2c3e50;
+}
+
+ul.list-bulleted > li {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+ol.list-numbered > li {
+    margin-bottom: 8px;
+    line-height: 1.8;
+}
+
+table.styled-table > thead > tr > th {
+    font-size: 1.05em;
+    font-variant: small-caps;
+    letter-spacing: 0.5px;
+}
+
+table.styled-table > tbody > tr:hover {
+    background-color: #f9f9f9;
+}
+/* Будь-які нащадки */
+dl.definition-list dt {
+    color: #1a5f7a;
+    text-transform: uppercase;
+    font-size: 0.95em;
+}
+
+table.styled-table td {
+    vertical-align: middle;
+    word-wrap: break-word;
+}
+
+body#page-body a {
+    transition: color 0.3s ease;
+}
+/* Наступний сусідній елемент */
+h2 + ul,
+h2 + ol,
+h2 + dl,
+h2 + table {
+    margin-top: 10px;
+}
+
+h3 + ul,
+h3 + ol {
+    margin-top: 8px;
+}
+
+dt + dd {
+    margin-bottom: 15px;
+}
+
+p + h2 {
+    margin-top: 2.5em;
+}
+
+p + h3 {
+    margin-top: 1.8em;
+}
