@@ -162,3 +162,159 @@ p + h2 {
 p + h3 {
     margin-top: 1.8em;
 }
+
+.position-demo {
+    border: 2px solid #333;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #f9f9f9;
+}
+
+.static-box {
+    position: static;
+    background-color: #e0e0e0;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #999;
+}
+
+.relative-box {
+    position: relative;
+    top: 10px;
+    left: 20px;
+    background-color: #ffe0e0;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #999;
+}
+
+.absolute-box {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background-color: #e0ffe0;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #999;
+    width: 150px;
+}
+
+.fixed-box {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #ffe0ff;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #999;
+    width: 150px;
+    z-index: 1000;
+}
+
+.sticky-box {
+    position: sticky;
+    top: 10px;
+    background-color: #e0ffff;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #999;
+}
+
+.float-demo {
+    border: 2px solid #666;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+.float-left {
+    float: left;
+    width: 45%;
+    background-color: #ffcccc;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #999;
+}
+
+.float-right {
+    float: right;
+    width: 45%;
+    background-color: #ccffcc;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #999;
+}
+
+.clearfix {
+    clear: both;
+    background-color: #ccccff;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #999;
+}
+
+.highlight {
+    background-color: #ffff99;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+a:link {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #663399;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #cc0000;
+    text-decoration: underline;
+    background-color: #f0f0f0;
+}
+
+a:active {
+    color: #ff6600;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.list-bulleted li:first-child {
+    font-weight: bold;
+    color: #006600;
+}
+
+.list-numbered li:first-child {
+    font-weight: bold;
+    color: #660000;
+}
+
+.definition-list dt:first-child {
+    background-color: #f0f8ff;
+    padding: 5px;
+}
+
+.pseudo-elements-demo {
+    border: 2px solid #999;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #fff8dc;
+}
+
+.quote:before {
+    content: '"';
+    font-size: 2em;
+    color: #666;
+    font-family: serif;
+}
+
+.quote:after {
+    content: '"';
+    font-size: 2em;
+    color: #666;
+    font-family: serif;
+}
