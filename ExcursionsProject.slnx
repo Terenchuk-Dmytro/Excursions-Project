@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="ExcursionsProject/ExcursionsProject.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>

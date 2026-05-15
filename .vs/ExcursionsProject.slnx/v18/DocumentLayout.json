@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\terem\\source\\repos\\ExcursionsProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0DD856AD-623B-D99C-6B4C-C71B3B98F4BF}|ExcursionsProject\\ExcursionsProject.esproj|c:\\users\\terem\\source\\repos\\excursionsproject\\excursionsproject\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0DD856AD-623B-D99C-6B4C-C71B3B98F4BF}|ExcursionsProject\\ExcursionsProject.esproj|solutionrelative:excursionsproject\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "app.js",
+              "DocumentMoniker": "C:\\Users\\terem\\source\\repos\\ExcursionsProject\\ExcursionsProject\\app.js",
+              "RelativeDocumentMoniker": "ExcursionsProject\\app.js",
+              "ToolTip": "C:\\Users\\terem\\source\\repos\\ExcursionsProject\\ExcursionsProject\\app.js",
+              "RelativeToolTip": "ExcursionsProject\\app.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-05-15T00:38:51.907Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
