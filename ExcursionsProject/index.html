@@ -2,6 +2,7 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Теренчук Дмитро">
     <title>Екскурсії Україною</title>
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -20,7 +21,7 @@
         document.write('<p id="load-message">JS модуль підключено. Натисніть кнопки для демонстрації.</p>');
     </script>
 
-    <p id="intro-paragraph" class="text-body">Вітаємо на нашому сайті екскурсій!</p>
+    <p id="intro-paragraph" class="text-body" style="font-weight: bold;">Вітаємо на нашому сайті екскурсій!</p>
 
     <p class="text-body">На цьому сайті ви знайдете детальну інформацію про екскурсії, які проводяться в <span class="highlight">Києві</span>, 
     <span class="highlight">Львові</span> та <span class="highlight">Одесі</span>.</p>
@@ -33,7 +34,7 @@
             <li><a class="nav-link" href="odesa.html">Екскурсія Одесою</a></li>
         </ul>
     </div>
-
+    
     <h2 id="info-section">Важлива інформація</h2>
     
     <h3>Типи екскурсій:</h3>
@@ -92,7 +93,6 @@
     <img src="images/lviv.jpg" alt="Львів" class="small-img img-link" onclick="window.open(this.src, '_blank')" title="Клік для повного розміру">
     <img src="images/odesa.jpg" alt="Одеса" class="small-img img-link" onclick="window.open(this.src, '_blank')" title="Клік для повного розміру">
 
-    <!-- Демонстрація псевдоелементів -->
     <div class="pseudo-elements-demo">
         <p class="quote">Це цитата з псевдоелементами</p>
     </div>
@@ -109,6 +109,46 @@
         </div>
         <div id="js-output"></div>
         <div id="dom-demo-target"></div>
+        <section id="event-demo" style="margin-top:1.5em;">
+            <h3>Демонстрація подій та делегування</h3>
+            <div id="event-buttons" style="margin-bottom:10px; display:grid; gap:6px;">
+                <button id="btn-attr" onclick="mouseHandlerAttr(event)">Клік через атрибут (onclick)</button>
+                <button id="btn-prop">Клік через властивість (element.onclick)</button>
+                <button id="btn-multi">addEventListener — кілька обробників</button>
+                <button id="btn-handle-obj">Об'єкт-обробник (handleEvent)</button>
+                <button id="btn-remove-handle-obj">Видалити об'єкт-обробник</button>
+            </div>
+            <h4>Список з делегуванням</h4>
+            <ul id="highlight-list" class="list-bulleted" style="cursor:pointer;">
+                <li data-behavior="select">Старе місто</li>
+                <li data-behavior="select">Пам'ятки</li>
+                <li data-behavior="select">Місце відпочинку</li>
+                <li data-behavior="select">Місце для фото</li>
+            </ul>
+            <h4>Меню з data-* атрибутами</h4>
+            <div id="menu" class="static-box" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
+                <button data-action="dialog" data-behavior="tooltip">Діалог</button>
+                <button data-action="dev" data-behavior="tooltip">Про розробника</button>
+                <button data-action="bg" data-color="#e6f7ff" data-behavior="tooltip">Змінити фон</button>
+            </div>
+            <h4>Події миші: hover та drag-and-drop</h4>
+            <div id="mouse-demo" class="mouse-demo">
+
+                <div id="hover-area" class="hover-area">
+                    <div class="hover-item">Київ</div>
+                    <div class="hover-item">Львів</div>
+                    <div class="hover-item">Одеса</div>
+                </div>
+                <p id="hover-note" class="hover-note">Наведіть мишу на будь-який елемент.</p>
+                <div class="drag-drop-layout">
+                    <div class="drag-source-box">
+                        <div id="drag-source" class="drag-source">Перетягни мене</div>
+                    </div>
+                    <div id="drop-target" class="drop-target">Опусти сюди</div>
+                </div>
+                <p id="drag-note" class="hover-note">Натисніть і тягніть елемент мишею.</p>
+            </div>
+        </section>
     </section>
 
     <script src="script.js" defer></script>

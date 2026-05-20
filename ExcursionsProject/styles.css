@@ -178,6 +178,89 @@ p + h3 {
     border: 1px solid #999;
 }
 
+.hover-area {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.hover-item {
+    padding: 12px 16px;
+    border: 2px solid #999;
+    border-radius: 8px;
+    background-color: #ffffff;
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+    min-width: 120px;
+    text-align: center;
+}
+
+.hover-item.hovered {
+    background-color: #ffe699;
+    border-color: #cc6600;
+    transform: translateY(-3px);
+}
+
+.hover-note {
+    margin-top: 10px;
+    font-style: italic;
+    color: #444;
+}
+
+.drag-drop-layout {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.drag-source-box,
+.drop-target {
+    flex: 1 1 280px;
+    min-height: 120px;
+    padding: 16px;
+    border: 2px dashed #999;
+    border-radius: 12px;
+    background-color: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drag-source {
+    padding: 12px 20px;
+    border: 2px solid #2c3e50;
+    border-radius: 10px;
+    background-color: #dbeeff;
+    cursor: grab;
+    user-select: none;
+    font-weight: bold;
+}
+
+.drag-source.dragging {
+    opacity: 0.7;
+    cursor: grabbing;
+    background-color: #b3d7ff;
+}
+
+.drop-target {
+    border-style: dashed;
+    color: #555;
+    text-align: center;
+}
+
+.drop-target.drop-success {
+    border-color: #2c7a2c;
+    background-color: #e6ffe6;
+}
+
+.drop-target.drop-fail {
+    border-color: #a00;
+    background-color: #ffe6e6;
+}
+
 .relative-box {
     position: relative;
     top: 10px;

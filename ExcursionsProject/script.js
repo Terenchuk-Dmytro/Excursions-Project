@@ -110,6 +110,118 @@ function demoDomManipulation() {
     output.append(note);
 }
 
+let dragState = {
+    active: false,
+    element: null,
+    offsetX: 0,
+    offsetY: 0,
+    originalParent: null,
+    originalNextSibling: null
+};
+
+function mouseHandlerAttr(event) {
+    alert('Обробник через атрибут (onclick) спрацював на: ' + (this.id || this.tagName));
+    console.log('mouseHandlerAttr currentTarget:', event.currentTarget);
+}
+
+function mouseHandlerProp(event) {
+    alert('Обробник через властивість (element.onclick) спрацював на: ' + event.currentTarget.id);
+    console.log('mouseHandlerProp currentTarget:', event.currentTarget);
+}
+
+function onHoverChange(event) {
+    const hoverItem = event.target.closest('.hover-item');
+    if (!hoverItem) return;
+    const hoverNote = document.getElementById('hover-note');
+    if (event.type === 'mouseover') {
+        hoverItem.classList.add('hovered');
+        
+    } else if (event.type === 'mouseout') {
+        hoverItem.classList.remove('hovered');
+        
+    }
+}
+
+function startDrag(event) {
+    const target = event.target.closest('#drag-source');
+    if (!target) return;
+    event.preventDefault();
+    dragState.active = true;
+    dragState.element = target;
+    dragState.originalParent = target.parentNode;
+    dragState.originalNextSibling = target.nextSibling;
+    const rect = target.getBoundingClientRect();
+    dragState.offsetX = event.clientX - rect.left;
+    dragState.offsetY = event.clientY - rect.top;
+    target.classList.add('dragging');
+    target.style.position = 'fixed';
+    target.style.left = `${rect.left}px`;
+    target.style.top = `${rect.top}px`;
+    target.style.zIndex = 1000;
+    document.body.appendChild(target);
+}
+
+function moveDrag(event) {
+    if (!dragState.active || !dragState.element) return;
+    event.preventDefault();
+    const element = dragState.element;
+    element.style.left = `${event.clientX - dragState.offsetX}px`;
+    element.style.top = `${event.clientY - dragState.offsetY}px`;
+}
+
+function stopDrag(event) {
+    if (!dragState.active || !dragState.element) return;
+    const element = dragState.element;
+    const dropTarget = document.getElementById('drop-target');
+    const oldPointerEvents = element.style.pointerEvents;
+    element.style.pointerEvents = 'none';
+    const under = document.elementFromPoint(event.clientX, event.clientY);
+    element.style.pointerEvents = oldPointerEvents;
+    const dropSuccess = dropTarget.contains(under);
+
+    element.classList.remove('dragging');
+    element.style.position = 'static';
+    element.style.left = '';
+    element.style.top = '';
+    element.style.zIndex = '';
+
+    dropTarget.classList.remove('drop-success', 'drop-fail');
+    if (dropSuccess) {
+        dropTarget.appendChild(element);
+        dropTarget.classList.add('drop-success');
+        document.getElementById('drag-note').textContent = 'Елемент успішно перетягнуто до зони.';
+    } else {
+        if (dragState.originalNextSibling) {
+            dragState.originalParent.insertBefore(element, dragState.originalNextSibling);
+        } else {
+            dragState.originalParent.appendChild(element);
+        }
+        dropTarget.classList.add('drop-fail');
+        document.getElementById('drag-note').textContent = 'Скиньте елемент у зону, щоб завершити перетягування.';
+    }
+
+    dragState.active = false;
+    dragState.element = null;
+}
+
+function multiHandlerA(event) {
+    console.log('multiHandlerA currentTarget:', event.currentTarget);
+    const element = event.currentTarget;
+    element.style.backgroundColor = '#ff0000';
+    setTimeout(() => { element.style.backgroundColor = ''; }, 30);
+}
+
+function multiHandlerB(event) {
+    alert('multiHandlerB: другий обробник під час однієї події');
+}
+
+const objectEventHandler = {
+    handleEvent(event) {
+        alert('objectEventHandler.handleEvent: подія ' + event.type + ' на ' + event.currentTarget.id);
+        console.log('objectEventHandler currentTarget:', event.currentTarget);
+    }
+};
+
 window.addEventListener('DOMContentLoaded', () => {
     const buttonDialog = document.getElementById('btn-dialog');
     const buttonDevInfo = document.getElementById('btn-dev-info');
@@ -150,5 +262,87 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (buttonDomDemo) {
         buttonDomDemo.addEventListener('click', demoDomManipulation);
+    }
+
+    const btnProp = document.getElementById('btn-prop');
+    const btnMulti = document.getElementById('btn-multi');
+    const btnHandleObj = document.getElementById('btn-handle-obj');
+    const btnRemoveHandleObj = document.getElementById('btn-remove-handle-obj');
+    const highlightList = document.getElementById('highlight-list');
+    const menu = document.getElementById('menu');
+
+    if (btnProp) {
+        btnProp.onclick = mouseHandlerProp;
+    }
+
+    if (btnMulti) {
+        btnMulti.addEventListener('click', multiHandlerA);
+        btnMulti.addEventListener('click', multiHandlerB);
+    }
+
+    if (btnHandleObj) {
+        btnHandleObj.addEventListener('click', objectEventHandler);
+    }
+
+    if (btnRemoveHandleObj && btnHandleObj) {
+        btnRemoveHandleObj.addEventListener('click', () => {
+            btnHandleObj.removeEventListener('click', objectEventHandler);
+            alert('Обробник-об\'єкт було видалено з кнопки.');
+        });
+    }
+
+    if (highlightList) {
+        highlightList.onclick = function (event) {
+            const li = event.target.closest('li');
+            if (!li || !highlightList.contains(li)) return;
+            const previous = highlightList.querySelector('.highlight');
+            if (previous) previous.classList.remove('highlight');
+            li.classList.add('highlight');
+            console.log('event.target:', event.target, 'event.currentTarget:', event.currentTarget);
+        };
+    }
+
+    if (menu) {
+        menu.addEventListener('click', (event) => {
+            const button = event.target.closest('button');
+            if (!button || !menu.contains(button)) return;
+            const action = button.dataset.action;
+            if (action === 'dialog') {
+                dialogWithUser();
+            } else if (action === 'dev') {
+                showDeveloperInfo('Теренчук', 'Дмитро');
+            } else if (action === 'bg') {
+                const color = button.dataset.color || '#fff2cc';
+                changeBackgroundTemporary(color, 5);
+            }
+        });
+
+        const behavioralElements = menu.querySelectorAll('[data-behavior]');
+        behavioralElements.forEach((element) => {
+            if (element.dataset.behavior === 'tooltip') {
+                element.addEventListener('mouseenter', () => {
+                    element.dataset.origTitle = element.title || '';
+                    element.title = 'Натисніть, щоб виконати дію';
+                });
+                element.addEventListener('mouseleave', () => {
+                    element.title = element.dataset.origTitle || '';
+                });
+            }
+        });
+    }
+
+    const hoverArea = document.getElementById('hover-area');
+    const dragSource = document.getElementById('drag-source');
+    const dropTarget = document.getElementById('drop-target');
+
+    if (hoverArea) {
+        hoverArea.addEventListener('mouseover', onHoverChange);
+        hoverArea.addEventListener('mouseout', onHoverChange);
+    }
+
+    if (dragSource) {
+        dragSource.addEventListener('mousedown', startDrag);
+        document.addEventListener('mousemove', moveDrag);
+        document.addEventListener('mouseup', stopDrag);
     }
 });
