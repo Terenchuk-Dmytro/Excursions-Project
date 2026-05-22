@@ -203,10 +203,6 @@ function stopDrag(event) {
 }
 
 function multiHandlerA(event) {
-<<<<<<< HEAD
-    console.log('multiHandlerA currentTarget:', event.currentTarget);
-=======
->>>>>>> 728302c (Bug fixes)
     const element = event.currentTarget;
     element.style.backgroundColor = '#ff0000';
     setTimeout(() => { element.style.backgroundColor = ''; }, 30);
@@ -218,12 +214,7 @@ function multiHandlerB(event) {
 
 const objectEventHandler = {
     handleEvent(event) {
-<<<<<<< HEAD
-        alert('objectEventHandler.handleEvent: подія ' + event.type + ' на ' + event.currentTarget.id);
-        console.log('objectEventHandler currentTarget:', event.currentTarget);
-=======
         alert('Подія "' + event.type + '" на сторінці екскурсій (' + event.currentTarget.id + ')');
->>>>>>> 728302c (Bug fixes)
     }
 };
 
@@ -303,10 +294,6 @@ window.addEventListener('DOMContentLoaded', () => {
             const previous = highlightList.querySelector('.highlight');
             if (previous) previous.classList.remove('highlight');
             li.classList.add('highlight');
-<<<<<<< HEAD
-            console.log('event.target:', event.target, 'event.currentTarget:', event.currentTarget);
-=======
->>>>>>> 728302c (Bug fixes)
         };
     }
 
@@ -315,22 +302,12 @@ window.addEventListener('DOMContentLoaded', () => {
             const button = event.target.closest('button');
             if (!button || !menu.contains(button)) return;
             const action = button.dataset.action;
-<<<<<<< HEAD
-            if (action === 'dialog') {
-                dialogWithUser();
-            } else if (action === 'dev') {
-                showDeveloperInfo('Теренчук', 'Дмитро');
-            } else if (action === 'bg') {
-                const color = button.dataset.color || '#fff2cc';
-                changeBackgroundTemporary(color, 5);
-=======
             if (action === 'kyiv') {
                 alert('Київ: Софійський собор, Поділ, Хрещатик');
             } else if (action === 'lviv') {
                 alert('Львів: Площа Ринок, Опера, Високий Замок');
             } else if (action === 'odesa') {
                 alert('Одеса: Дерибасівська, Приморський бульвар, Оперний театр');
->>>>>>> 728302c (Bug fixes)
             }
         });
 
